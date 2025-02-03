@@ -2,7 +2,6 @@
 
 import { skillsData } from "../components/utils/data/skills";
 import skillsImage from "../components/utils/skill-image";
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 function Skills() {

@@ -1,6 +1,6 @@
 import { 
   FaHtml5, FaCss3Alt, FaJsSquare, FaReact, 
-  FaGitAlt, FaGithub, FaBootstrap, 
+  FaGithub, FaBootstrap, 
   FaLaravel
 } from 'react-icons/fa';
 import { 

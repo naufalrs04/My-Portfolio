@@ -1,10 +1,6 @@
 "use client" ;
-
-import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
-import { desc } from "motion/react-client";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link} from "@heroui/react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 

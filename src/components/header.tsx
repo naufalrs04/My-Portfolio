@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +83,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="py-4 flex flex-col items-center">
             {["About", "Experience", "Skill", "Project", "Education"].map(
-              (item, index, array) => (
+              (item) => (
                 <button
                   key={item}
                   className={`text-gray-300 transition duration-300 px-6 py-3 w-full text-center border-gray-700 hover:shadow-lg hover:border-t-2 hover:border-b-2 border-white`}

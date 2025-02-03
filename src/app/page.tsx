@@ -1,10 +1,7 @@
 "use client";
 
-import { useState, useEffect, ReactNode } from "react";
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Nav from "../components/header";
 import Landing from "@/components/landing";
 import Information from "@/components/information";
@@ -58,7 +55,7 @@ const Section: React.FC<SectionProps> = ({ id, children }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ amount: 0.3 }} 
+      viewport={{ amount: 0.3 }}
       className="my-10"
     >
       {children}
