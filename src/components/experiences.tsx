@@ -8,16 +8,16 @@ export const item1 = [
   {
     id : 1,
     time : "August 2024 - Now",
-    description1: "RESEARCH ASSISTANT",
+    description1: "RESEARCH ASSISTANT - Prajanto Wahyu Adi, M.Kom",
     description2:
       "I work as a research assistant, helping my lecturer conduct Machine Learning experiments with the goal of publishing in academic journals. My tasks include data preprocessing, model building, hyperparameter tuning, and feature selection",
   },
   {
     id : 2,
     time : "January 2025 - February 2025",
-    description1: "SOFTWARE ENGINEER INTERN",
+    description1: "WEB-DEVELOPER INTERN - Politeknik Pekerjaan Umum",
     description2:
-      "I worked as a software engineer intern at a startup company. I was responsible for developing a web application using React.js and Node.js. I also worked on the backend, creating RESTful APIs and integrating third-party services.",
+      "Developed a web-based attendance application integrated with location tracking, selfie verification, and employee management system. Responsible for designing and implementing features, optimizing application performance, and ensuring data accuracy and security in the attendance system.",
   },
 ];
 
@@ -27,14 +27,14 @@ export const item2 = [
     time : "August 2024 - December 2024",
     description1: "DATA STRUCTRURE LABORATORY ASSISTANT",
     description2:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Taught students data structures using C. Covered some fundamental topics, explained implementation techniques, and algorithm efficiency. Led lab sessions, provided hands-on coding exercises, and assisted students in debugging and optimizing their programs.",
   },
   {
     id : 2,
     time : "February 2024 - October 2024",
     description1: "ALGORITHM AND PROGRAMMING LABORATORY ASSISTANT",
     description2:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Taught students the fundamentals of programming using C. Explained procedural programming concepts, demonstrated coding techniques, and helped students debug their code. Led lab sessions to strengthen their problem-solving and algorithmic thinking skills.",
   },
 ]
 
@@ -44,7 +44,7 @@ export const item3 = [
     time : "August 2023 - December 2023",
     description1: "BASIC PROGRAMMING LABORATORY ASSISTANT",
     description2:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Taught students programming using Python. Explained functional programming concepts, demonstrated coding techniques, and helped students debug their code. Led lab sessions to enhance their problem-solving and algorithmic thinking skills.",
   }
 ]
 export default function Experience() {

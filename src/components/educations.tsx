@@ -29,7 +29,7 @@ export default function Education() {
       <div className="flex w-full justify-center py-8">
         <div className="flex items-center">
           <span className="w-16 sm:w-24 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-lg sm:text-xl rounded-md shadow-lg">
+          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 sm:text-sm lg:text-xl rounded-md shadow-lg">
             Education
           </span>
           <span className="w-16 sm:w-24 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"></span>

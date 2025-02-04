@@ -45,17 +45,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-transparent font-sans"
       ref={containerRef}
     >
-      <div className="flex justify-center max-w-7xl mx-auto pb-20 pt-10 px-4 md:px-8 lg:px-10">
+      <div className="flex justify-center max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
         <div className="flex items-center">
             <span className="w-24 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"></span>
-            <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md shadow-lg">
+            <span className="bg-[#1a1443] w-fit text-white p-2 px-5 sm:text-sm lg:text-xl rounded-md shadow-lg">
             Experience
             </span>
             <span className="w-24 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"></span>
         </div>
       </div>
       
-      <div ref={ref} className="relative w-full mx-auto pb-20">
+      <div ref={ref} className="relative w-full mx-auto py-20">
         {data.map((item, index) => (
           <div
             key={index}

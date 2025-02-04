@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { motion } from "framer-motion";
 import Nav from "../components/header";
 import Landing from "@/components/landing";
@@ -10,8 +10,28 @@ import Experience from "@/components/experiences";
 import Project from "@/components/projects";
 import Education from "@/components/educations";
 import Footer from "@/components/footer";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function Home() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div>
       <Nav />
@@ -39,6 +59,15 @@ export default function Home() {
         </Section>
       </div>
       <Footer />
+
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-7 right-7 bg-blue-700 text-white p-2 sm:p-3 md:p-4 rounded-full shadow-lg hover:bg-blue-800 transition-all z-50"
+        >
+          <FaArrowUp className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
+        </button>
+      )}
     </div>
   );
 }
@@ -55,7 +84,7 @@ const Section: React.FC<SectionProps> = ({ id, children }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.1 }}
       className="my-10"
     >
       {children}

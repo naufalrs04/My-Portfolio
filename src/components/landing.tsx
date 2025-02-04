@@ -20,7 +20,7 @@ const Landing = () => {
   return (
     <BackgroundBeamsWithCollision className="min-h-screen">
       <section className="flex flex-col items-center justify-center min-h-screen text-center bg-transparent text-white relative">
-        <h1 className="text-3xl sm:text-3xl lg:text-5xl font-extrabold mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
           Hello, <br /> My Name is Naufal <br /> I&apos;m a{" "}
           <TypeAnimation
             sequence={[
@@ -39,50 +39,52 @@ const Landing = () => {
         </h1>
         <div className="my-12 flex items-center gap-7">
           <Link
-            href=""
+            href="https://github.com/naufalrs04"
             target="_blank"
             className="transition-all text-pink-500 hover:scale-125 duration-300"
           >
             <BsGithub size={40} />
           </Link>
           <Link
-            href=""
+            href="www.linkedin.com/in/naufalrs"
             target="_blank"
             className="transition-all text-pink-500 hover:scale-125 duration-300"
           >
             <BsLinkedin size={40} />
           </Link>
           <Link
-            href=""
+            href="https://www.instagram.com/naufalrs_04"
             target="_blank"
             className="transition-all text-pink-500 hover:scale-125 duration-300"
           >
             <FaInstagram size={40} />
           </Link>
           <Link
-            href=""
+            href="https://wa.me/6281225717674"
             target="_blank"
             className="transition-all text-pink-500 hover:scale-125 duration-300"
           >
             <FaWhatsapp size={40} />
           </Link>
         </div>
-        <div className="flex gap-4 mt-5">
+        <div className="flex justify-center gap-4 md:gap-10 mt-5">
           <Link
             href="/#contact"
-            className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:scale-105 hover:shadow-lg"
+            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px]"
           >
             Contact Me
           </Link>
-          <Link
-            href="/"
-            className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-green-500 to-yellow-500 hover:scale-105 hover:shadow-lg"
+          <a
+            href="/CV/Naufal_Rizki_Saputra_CV.pdf"
+            download
+            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-green-600 to-yellow-600 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px]"
           >
             Download CV
-          </Link>
+          </a>
         </div>
+
         <motion.div
-          className="absolute bottom-20 cursor-pointer align-middle flex flex-col items-center"
+          className="absolute bottom-11 cursor-pointer align-middle flex flex-col items-center"
           onClick={handleScroll}
           initial={{ y: 0 }}
           animate={{ y: [0, 10, 0] }}

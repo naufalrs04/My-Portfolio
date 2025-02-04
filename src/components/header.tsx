@@ -54,10 +54,11 @@ export default function Navbar() {
             (item) => (
               <button
                 key={item}
-                className="hover:text-white transition duration-300"
+                className="relative group hover:text-white transition duration-300"
                 onClick={() => handleNavClick(item.toLowerCase())}
               >
                 {item}
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-600 group-hover:w-full"></span>
               </button>
             )
           )}
@@ -86,7 +87,7 @@ export default function Navbar() {
               (item) => (
                 <button
                   key={item}
-                  className={`text-gray-300 transition duration-300 px-6 py-3 w-full text-center border-gray-700 hover:shadow-lg hover:border-t-2 hover:border-b-2 border-white`}
+                  className={`text-gray-300 transition duration-300 px-6 py-3 w-full text-center hover:shadow-lg border-t-2 border-black`}
                   onClick={() => handleNavClick(item.toLowerCase())}
                 >
                   {item}
