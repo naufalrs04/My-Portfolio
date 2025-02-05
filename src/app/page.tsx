@@ -92,7 +92,6 @@ const Section: React.FC<SectionProps> = ({ id, children }) => {
   );
 };
 
-// 🔹 Komponen Divider
 const Divider = () => (
   <div className="flex justify-center -translate-y-[1px]">
     <div className="w-3/4">
