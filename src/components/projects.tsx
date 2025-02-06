@@ -50,11 +50,8 @@ export default function Project() {
       {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-6">
         {projects.map((project) => (
-          <div className="w-full flex justify-center">
-            <div
-              key={project.id}
-              className="bg-[#1a1443] shadow-lg rounded-lg overflow-hidden w-full max-w-md flex flex-col h-full transition-transform duration-300 transform hover:scale-105 relative group"
-            >
+          <div key={project.id} className="w-full flex justify-center">
+            <div className="bg-[#1a1443] shadow-lg rounded-lg overflow-hidden w-full max-w-md flex flex-col h-full transition-transform duration-300 transform hover:scale-105 relative group">
               <img
                 src={project.image}
                 alt={project.title}
