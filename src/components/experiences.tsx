@@ -3,7 +3,6 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
-
 export const item1 = [
   {
     id : 1,

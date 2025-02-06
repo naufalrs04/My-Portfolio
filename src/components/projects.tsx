@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "./lib/utils";
+import React from "react";
 
 const projects = [
   {
@@ -8,6 +8,7 @@ const projects = [
     subtitle: "SPARTA",
     description:
       "Academic information system designed to help students create Study Plan Forms (IRS) with features tailored to other roles as needed",
+    technologies: ["Laravel", "Tailwind CSS", "Flowbite", "MySQL"],
     image: "/Projects/Cover_SPARTA.png",
     github: "https://github.com/naufalrs04/SPARTA.git",
   },
@@ -17,9 +18,9 @@ const projects = [
     subtitle: "PALMA",
     description:
       "An employee attendance app with selfie verification and location tracking",
-    image:
-      "https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80",
-    github: "https://github.com/naufalrs04/SPARTA.git",
+    technologies: ["React", "MySQL", "Laravel"],
+    image: "/Projects/Cover_PALMA.png",
+    github: "https://github.com/naufalrs04/PALMA.git",
   },
   {
     id: 3,
@@ -27,6 +28,7 @@ const projects = [
     subtitle: "Opta-IDS",
     description:
       "A web application developed with Python and Flask, designed to demonstrate and optimize machine learning models for an anomaly-based Intrusion Detection System",
+    technologies: ["Python", "Flask", "Scikit-learn"],
     image: "/Projects/Cover_Opta-IDS.png",
     github: "https://github.com/naufalrs04/Opta-IDS.git",
   },
@@ -45,39 +47,54 @@ export default function Project() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      {/* Project Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-6">
         {projects.map((project) => (
-          <div key={project.id} className="w-full">
-            <button
-              onClick={() => window.open(project.github, "_blank")}
-              className={cn(
-                "relative overflow-hidden h-80 sm:h-120 rounded-md shadow-xl flex flex-col justify-end p-2",
-                "border-2 border-violet-300", // Border style
-                "boxShadow-[0_0_10px_rgba(255,_255,_255,_0.3)]", // Box shadow
-                "transition-all duration-300", // Smooth transition for hover
-                "hover:border-[#9e8c8c]", // Change border color on hover
-                "hover:shadow-xl", // Increase shadow intensity on hover
-                "hover:scale-105" // Slightly scale the card on hover
-              )}
-              style={{
-                backgroundImage: `url(${project.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+          <div className="w-full flex justify-center">
+            <div
+              key={project.id}
+              className="bg-[#1a1443] shadow-lg rounded-lg overflow-hidden w-full max-w-md flex flex-col h-full transition-transform duration-300 transform hover:scale-105 relative group"
             >
-              {/* Overlay dengan efek gradient */}
-              <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 lg:h-60 object-cover"
+              />
 
-              {/* Konten di atas overlay dengan latar belakang sedikit lebih gelap */}
-              <div className="relative z-10 bg-black/60 p-4 rounded-md">
-                <h1 className="font-bold text-lg sm:text-xl text-green-600">
+              <div className="p-4 flex-1">
+                <h2 className="text-lg font-bold text-violet-100">
                   {project.subtitle} - {project.title}
-                </h1>
-                <p className="font-normal text-xs sm:text-sm text-gray-200 mt-2">
+                </h2>
+                <p className="text-sm text-gray-300 mt-2">
                   {project.description}
                 </p>
               </div>
-            </button>
+
+              <div className="p-4 bg-[#302b63] mt-auto flex flex-col justify-between min-h-[150px]">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-300">
+                    Technologies:
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="bg-cyan-600 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => window.open(project.github, "_blank")}
+                  className="mt-4 w-full bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white font-semibold py-2 rounded-md transition duration-300"
+                >
+                  View on GitHub
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>

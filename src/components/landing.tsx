@@ -19,8 +19,8 @@ const Landing = () => {
 
   return (
     <BackgroundBeamsWithCollision className="min-h-screen">
-      <section className="flex flex-col items-center justify-center min-h-screen text-center bg-transparent text-white relative">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
+      <section className="flex flex-col items-center justify-center min-h-screen text-center bg-transparent text-white">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-4 z-40">
           Hello, <br /> My Name is Naufal <br /> I&apos;m a{" "}
           <TypeAnimation
             sequence={[
@@ -37,7 +37,7 @@ const Landing = () => {
             className="bg-gradient-to-r from-blue-400 to-green-400 text-transparent bg-clip-text"
           />
         </h1>
-        <div className="my-12 flex items-center gap-7">
+        <div className="my-8 flex items-center gap-7 z-40">
           <Link
             href="https://github.com/naufalrs04"
             target="_blank"
@@ -70,31 +70,31 @@ const Landing = () => {
         <div className="flex justify-center gap-4 md:gap-10 mt-5">
           <Link
             href="/#contact"
-            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px]"
+            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px] z-40"
           >
             Contact Me
           </Link>
           <a
             href="/CV/Naufal_Rizki_Saputra_CV.pdf"
             download
-            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-green-600 to-yellow-600 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px]"
+            className="px-6 py-3 rounded-full text-sm md:text-base text-white font-semibold bg-gradient-to-r from-green-600 to-yellow-600 hover:scale-105 hover:shadow-lg w-[140px] md:w-[170px] z-40"
           >
             Download CV
           </a>
         </div>
 
         <motion.div
-          className="absolute bottom-11 cursor-pointer align-middle flex flex-col items-center"
+          className="absolute bottom-16 cursor-pointer flex flex-col items-center z-40"
           onClick={handleScroll}
           initial={{ y: 0 }}
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         >
           <FaArrowDown
-            size={40}
             className="text-white hover:scale-110 transition-transform"
+            size={30}
           />
-          <h2>more info</h2>
+          <h2 className="text-sm sm:text-base">more info</h2>
         </motion.div>
       </section>
     </BackgroundBeamsWithCollision>

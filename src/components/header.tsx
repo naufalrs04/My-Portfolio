@@ -37,7 +37,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full py-5 shadow-lg z-50 px-4 transition-all duration-300 ${
         isScrolled
-          ? "bg-gradient-to-r border-b-2 border-indigo-800 from-black via-indigo-900 to-black"
+          ? "bg-gradient-to-r from-black via-indigo-900 to-black"
           : "bg-black"
       }`}
     >

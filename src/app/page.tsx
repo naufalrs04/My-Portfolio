@@ -11,6 +11,7 @@ import Project from "@/components/projects";
 import Education from "@/components/educations";
 import Footer from "@/components/footer";
 import { FaArrowUp } from "react-icons/fa";
+import { Boxes } from "@/components/ui/background-boxes";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -33,11 +34,22 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Nav />
-      <div className="container mx-auto py-6 px-6 sm:px-12 lg:px-24">
-        <Landing />
-        <Divider />
+    <div className="overflow-hidden">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-24">
+        <Nav />
+        {/* Landing Section */}
+        <div>
+          <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
+            <Boxes />
+          </div>
+          <Section id="landing">
+            <div>
+              <Landing />
+            </div>
+          </Section>
+        </div>
+
+        {/* Other Sections */}
         <Section id="about">
           <Information />
         </Section>
@@ -58,8 +70,10 @@ export default function Home() {
           <Education />
         </Section>
       </div>
+
       <Footer />
 
+      {/* Scroll to Top Button */}
       {showButton && (
         <button
           onClick={scrollToTop}
