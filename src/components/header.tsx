@@ -42,10 +42,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-white tracking-wide relative">
-          NOPAL
-          <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500"></span>
+        <div className="text-3xl font-bold tracking-wide relative bg-gradient-to-r from-indigo-400 via-grey-200 to-white bg-clip-text text-transparent font-orbitron">
+          Zergione.
         </div>
 
         {/* Desktop Menu */}
@@ -64,7 +62,6 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Hamburger Menu Button */}
         <button
           className="md:hidden text-white p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           onClick={() => setIsOpen(!isOpen)}
@@ -75,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute left-0 top-full w-full bg-gradient-to-r from-black via-indigo-900 to-black shadow-lg transition-all duration-500 ${
+        className={`md:hidden absolute left-0 top-full w-full bg-black shadow-lg transition-all duration-500 ${
           isOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-5 pointer-events-none"

@@ -1,23 +1,26 @@
 "use client";
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Update isMobile state on mount and window resize
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+  
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches);
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+  
+    mediaQuery.addEventListener("change", handleChange);
+    setIsMobile(mediaQuery.matches);
+  
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
-
-  const rows = new Array(isMobile ? 20 : 100).fill(1);
-  const cols = new Array(isMobile ? 15 : 100).fill(1);
+  
+  const rows = new Array(isMobile ? 0 : 80).fill(1);
+  const cols = new Array(isMobile ? 0 : 60).fill(1);
 
   const colors = useMemo(
     () => [
@@ -32,14 +35,11 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   );
   
 
-  const getRandomColor = useMemo(
-    () => () => {
-      return colors[Math.floor(Math.random() * colors.length)];
-    },
-    [colors]
-  );
+  const getRandomColor = useCallback(() => {
+    return colors[Math.floor(Math.random() * colors.length)];
+  }, [colors]);
+  
 
-  // Only enable hover animations on desktop
   const motionConfig = useMemo(
     () => ({
       whileHover: !isMobile
@@ -79,10 +79,8 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
             <motion.div
               key={`col${j}`}
               {...motionConfig}
-              initial={false}
               className="w-16 h-8 border-r border-t border-slate-700/[0.2] relative"
             >
-              {/* Only render plus signs on desktop or every 4th intersection on mobile */}
               {(!isMobile && j % 2 === 0 && i % 2 === 0) ||
               (isMobile && j % 4 === 0 && i % 4 === 0) ? (
                 <svg
