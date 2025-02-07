@@ -84,7 +84,7 @@ const Landing = () => {
         </div>
 
         <motion.div
-          className="absolute bottom-16 cursor-pointer flex flex-col items-center z-40"
+          className="absolute bottom-3 cursor-pointer flex flex-col items-center z-40"
           onClick={handleScroll}
           initial={{ y: 0 }}
           animate={{ y: [0, 10, 0] }}
