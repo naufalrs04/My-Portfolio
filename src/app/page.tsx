@@ -11,10 +11,22 @@ import Project from "@/components/projects";
 import Education from "@/components/educations";
 import Footer from "@/components/footer";
 import { FaArrowUp } from "react-icons/fa";
-import { Boxes } from "@/components/ui/background-boxes";
+// import { Boxes } from "@/components/ui/background-boxes";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +51,12 @@ export default function Home() {
         <Nav />
         {/* Landing Section */}
         <div>
-          <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
-            <Boxes />
-          </div>
+          {/* Tampilkan Boxes hanya jika layar >= 768px */}
+          {/* {isDesktop && (
+            <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
+              <Boxes />
+            </div>
+          )} */}
           <Section id="landing">
             <div>
               <Landing />

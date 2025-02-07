@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+// import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 const Landing = () => {
   const handleScroll = () => {
@@ -18,7 +18,7 @@ const Landing = () => {
   };
 
   return (
-    <BackgroundBeamsWithCollision className="min-h-screen">
+    // <BackgroundBeamsWithCollision className="min-h-screen">
       <section className="flex flex-col items-center justify-center min-h-screen text-center bg-transparent text-white">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-4 z-40">
           Hello, <br /> My Name is Naufal <br /> I&apos;m a{" "}
@@ -97,7 +97,7 @@ const Landing = () => {
           <h2 className="text-sm sm:text-base">more info</h2>
         </motion.div>
       </section>
-    </BackgroundBeamsWithCollision>
+    // </BackgroundBeamsWithCollision>
   );
 };
 
