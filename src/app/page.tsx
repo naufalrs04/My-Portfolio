@@ -15,18 +15,18 @@ import { FaArrowUp } from "react-icons/fa";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(true);
+  // const [isDesktop, setIsDesktop] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsDesktop(window.innerWidth >= 768);
+  //   };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +51,6 @@ export default function Home() {
         <Nav />
         {/* Landing Section */}
         <div>
-          {/* Tampilkan Boxes hanya jika layar >= 768px */}
           {/* {isDesktop && (
             <div className="absolute inset-0 w-full h-full z-20 overflow-hidden">
               <Boxes />
